@@ -1,0 +1,7 @@
+JSX Rules:
+- return single element
+    - div / section / article or Fragment
+- use camelCase for html attribute
+- className instead of className
+- close every element 
+- formatting
