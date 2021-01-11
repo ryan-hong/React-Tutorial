@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-//! stateless fucntional component
+//! stateless functional component
 // always return JSX
 
 // function Greeting() {
