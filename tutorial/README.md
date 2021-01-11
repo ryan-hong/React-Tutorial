@@ -1,3 +1,6 @@
+This is a tutorial I am following from freeCodeCamp.org on Youtube.  It is a 10hr tutorial where I will be exploring and learning React.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
