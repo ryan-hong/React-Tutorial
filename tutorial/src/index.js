@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
 //! stateless functional component
 // always return JSX
@@ -24,19 +25,61 @@ import ReactDOM from "react-dom";
 
 //! Nested Components
 
-function Greeting() {
+// function Greeting() {
+//   return (
+//     <div>
+//       <Person />
+//       <Message />
+//     </div>
+//   );
+// }
+
+// const Person = () => <h2>john do</h2>; // implicit return
+// const Message = () => {
+//   // explicit return
+//   return <p>this is a message</p>;
+// };
+
+//! Mini Book Project
+
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>john doe</h2>; // implicit return
-const Message = () => {
-  // explicit return
-  return <p>this is a message</p>;
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+const Image = () => (
+  <img
+    src="https://m.media-amazon.com/images/I/61nZqhftUPL._AC_UL320_.jpg"
+    alt=""
+  />
+);
+
+const Title = () => <h1>The Hunger Games</h1>;
+
+const Author = () => (
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Suzanne Collins
+  </h4>
+  // inline styling requires {{}} to go from jsx to js, camelcase and quotations also required
+  // inline css overpowers external css file
+);
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
