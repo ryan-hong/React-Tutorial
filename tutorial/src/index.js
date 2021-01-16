@@ -42,28 +42,57 @@ import "./index.css";
 
 //! Mini Book Project
 
+const firstBook = {
+  img: "https://m.media-amazon.com/images/I/61nZqhftUPL._AC_UL320_.jpg",
+  title: "The Hunger Games",
+  author: "Suzanne Collins",
+};
+
+const secondBook = {
+  img: "https://m.media-amazon.com/images/I/81L76nhzZpL._AC_UL320_.jpg",
+  title: "The Hunger Games: Catching Fire",
+  author: "Suzanne Collins",
+};
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  return (
+    <article className="book">
+      <img src={props.img} alt="" />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
+    </article>
+  );
+};
+
+const BookComponentWay = (props) => {
   return (
     <article className="book">
       <Image />
       <Title />
-      <Author />
+      <h4>{author}</h4>
     </article>
   );
 };
+
+// although we have different const/components here, we can combine all and put it directly into Book
+// simple things don't always need to be broken up into tiny components
 
 const Image = () => (
   <img
@@ -74,12 +103,16 @@ const Image = () => (
 
 const Title = () => <h1>The Hunger Games</h1>;
 
-const Author = () => (
-  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-    Suzanne Collins
-  </h4>
-  // inline styling requires {{}} to go from jsx to js, camelcase and quotations also required
-  // inline css overpowers external css file
-);
+// can also be a normal variable
+const author = "Suzanne Collins";
+
+// const Author = () => (
+//   <h4 //style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}
+//   >
+//     Suzanne Collins
+//   </h4>
+// inline styling requires {{}} to go from jsx to js, camelcase and quotations also required
+// inline css overpowers external css file
+// );
 
 ReactDOM.render(<BookList />, document.getElementById("root"));

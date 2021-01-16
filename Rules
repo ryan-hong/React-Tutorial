@@ -5,3 +5,5 @@ JSX Rules:
 - className instead of className
 - close every element 
 - formatting
+- inline styling requires {{}} to go from jsx to js, camelcase and quotations also required
+- inline css overpowers external css file
